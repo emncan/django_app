@@ -1,4 +1,4 @@
-# Django app with Docker, Postgres, Gunicorn, and Nginx
+# Django app with Docker, PostgreSQL, Gunicorn, and Nginx
 
 Sample product management django api using JWT token authentication.
 
@@ -107,10 +107,10 @@ Listing the set of fields you wish to filter against.
 
 #### 6.2 Search Filtering.
  
-This will allow the client to filter the items in the list by making queries such as:
+This will allow the client to filter the items in the list by making queries such as: (searches by product name and manufacturer)
 
    ```sh
-    http://127.0.0.1:8000/api/products_filter?manufacturer=test_prod_manufacturer
+    http://127.0.0.1:8000/api/products_search?search=test
   ```
 #### 6.3 Ordering Filter.
 
