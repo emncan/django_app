@@ -80,7 +80,7 @@ Uses gunicorn + nginx.
 ### 4. Update Product
 
    ```sh
-  http://127.0.0.1:8000/api/products/
+  http://127.0.0.1:8000/api/products/<id>
   ```
   
   ![update](https://user-images.githubusercontent.com/30287266/141648159-437f8a13-c9a4-4344-9497-fcb62b3ac83e.png)
@@ -88,7 +88,7 @@ Uses gunicorn + nginx.
 ### 5. Delete Product
 
   ```sh
-  http://127.0.0.1:8000/api/products/
+  http://127.0.0.1:8000/api/products/<id>
   ```
   
   ![delete](https://user-images.githubusercontent.com/30287266/141648185-c0ed9a78-4682-431a-a558-8cf8552b284d.png)
