@@ -37,13 +37,16 @@ class ProductsView(APIView):
 
     def patch(self, request, id=None):
         """Update product based on id"""
-        item = Products.objects.get(id=id)
-        serializer = ProductsSerializer(item, data=request.data, partial=True)
-        if serializer.is_valid():
-            serializer.save()
-            return Response({"status": "success", "data": serializer.data})
-        else:
-            return Response({"status": "error", "data": serializer.errors})
+        try:
+            item = Products.objects.get(id=id)
+            serializer = ProductsSerializer(item, data=request.data, partial=True)
+            if serializer.is_valid():
+                serializer.save()
+                return Response({"status": "success", "data": serializer.data})
+            else:
+                return Response({"status": "error", "data": serializer.errors})
+        except Products.DoesNotExist:
+            return Response({"status": "error", "data": f"id => {id} does not exist"})
 
     def delete(self, request, id=None):
         """Delete product based on id"""
